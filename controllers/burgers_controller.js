@@ -1,29 +1,38 @@
 
 var express = require("express");
-var runburger = require("./burger.js");
+var runburger = require("../models/burger.js");
+var router = express.Router();
 
-
-// route for the style sheet
-module.exports = app.get("/style", function(req, res){
-  res.sendFile(path.join(__dirname, "/public/assets/css/style.css"));
-});
-
-// route for the image
-module.exports = app.get("/image", function(req, res){
-  res.sendFile(path.join(__dirname, "/public/assets/images/burger.png"));
-});
 
 // routes for functionality
-module.exports = app.get("/", function(req, res) {
-  ormfunctions.getAllFromdb(res);
+router.get("/", function(req, res) {
+	runburger.getAllFromdb(req, res);
 });
 
-module.exports = app.put("/", function(req, res) {
-  ormfunctions.InsertNewBurger(req, res);
+router.put("/", function(req, res) {
+	runburger.InsertNewBurger(req, res);
     res.redirect("/");
   });
 
-module.exports = app.post("/", function(req, res) {
-  ormfunctions.updateABurger(req, res);
+router.post("/", function(req, res) {
+	runburger.updateABurger(req, res);
   });
 
+router.delete("/", function(req, res) {
+	runburger.deleteABurger(req, res);
+  });
+
+//------------------------
+// route for the style sheet
+// router.get("/style", function(req, res){
+// 	res.sendFile(path.join(__dirname, "../public/assets/css/style.css"));
+// });
+
+// // route for the image
+// router.get("/url", function(req, res){
+// 	console.log("we got the image request");
+// 	res.sendFile(path.join(__dirname, "../public/assets/images/burger.png"));
+// });
+
+
+module.exports = router;

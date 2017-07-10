@@ -6,8 +6,7 @@ CREATE TABLE burgers(
 	id integer (10) auto_increment not null,
 	burger_name varchar (30),
 	devoured tinyint,
-    noteaten tinyint,
-	burgertime date,
+	burgertime datetime,
 	PRIMARY KEY (id)
 );
 
