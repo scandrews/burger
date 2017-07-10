@@ -1,4 +1,4 @@
-var connection = require("./connection.js");
+var connection = require("./connection_heroku.js");
 
 module.exports = {
 	selectAll: function(query, req, res){
