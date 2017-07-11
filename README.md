@@ -6,6 +6,11 @@ Steven Andrews
 
 This application will list the burgers in an SQL database, allowing the user to create new burgers and to "eat" the burger.
 
+## Deployment
+
+THis applicatin is deployed on Heroku at:
+https://git.heroku.com/scandrewsburger.git
+
 ## Homepage
 
 

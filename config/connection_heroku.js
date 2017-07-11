@@ -4,18 +4,17 @@ var mysql = require("mysql");
 if (process.env.JAWSDB_URL){
 	connection = mysql.createconnection(process.env.JAWSDB_URL);
 } else {
-	
 var connection = mysql.createConnection({
 	host: "localhost",
-	post: "3306",
-	user: "scandrews",
-	password: "hacktheplanet",
-	database: "todoagain_db"
-}
+	port: 3306,
+	user: "f03shz6x3alxhh4z",
+	password: "kb7j2pm0vpzax8zb",
+	database: "burger_db"
 });
+};
 
 // connect to the database
-	connection.connect(function(err) {
+connection.connect(function(err) {
   if (err) {
     console.error("error connecting - " + err.stack);
     return;
