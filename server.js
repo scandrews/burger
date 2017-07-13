@@ -7,7 +7,7 @@ var methodOverride = require("method-override");
 var express = require("express");
 
 // Set up application dependencies
-var connection = require("./config/connection.js");
+var connection = require("./config/connection_heroku.js");
 // set up database access dependencies
 var db_accessLinks = require("./config/orm.js");
 var ormfunctions = require("./models/burger.js");
